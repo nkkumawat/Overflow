@@ -1,0 +1,17 @@
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+footer {
+    background-color: #03a9f4 !important;
+}
+
+.askquestion {
+    display: none;
+}
+.title {
+    color: red;
+}

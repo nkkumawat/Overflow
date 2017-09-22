@@ -27,10 +27,10 @@ router.get('/', function(req, res, next) {
     //     staterData.username = req.session.user[0].name;
     //     res.render('index', staterData);
     // }
-    sql = "SELECT * FROM questions , login where askedby = id ";
+    sql = "SELECT * FROM questions , login where questions.askedby = login.id order by questions.askedtime desc ";
     con.query(sql, function (err, result, fields) {
         staterData.questions = result;
-        console.log(result[0].title);
+        console.log(result[0].askedtime);
         res.render('questions', staterData);
     });
 });

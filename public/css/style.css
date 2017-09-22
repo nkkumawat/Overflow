@@ -12,6 +12,7 @@ footer {
 .askquestion {
     display: none;
 }
-.title {
+.boldtxt {
     color: red;
+    font-size: inherit;
 }

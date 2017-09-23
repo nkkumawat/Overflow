@@ -14,6 +14,7 @@ var login = require('./routes/login');
 var saveQuestion = require('./routes/saveQuestion');
 var questions = require('./routes/questions');
 var questionbyid = require('./routes/questionbyid');
+var saveanswer = require('./routes/saveanswer');
 
 var app = express();
 
@@ -51,6 +52,7 @@ app.use('/login', login);
 app.use('/saveQuestion', saveQuestion);
 app.use('/questions', questions);
 app.use('/questionbyid', questionbyid);
+app.use('/saveanswer', saveanswer);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

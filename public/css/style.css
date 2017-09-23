@@ -16,3 +16,13 @@ footer {
     color: red;
     font-size: inherit;
 }
+.nav-top {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.search-question {
+    /*margin-top: 10px;*/
+    margin-right: -5%;
+    height: 60px;
+    padding-top: -5px;
+}

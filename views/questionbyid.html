@@ -43,7 +43,7 @@
                             {{questions2.name}}
                         </p>
                         <p align="right">
-                            {{questions2.askedtime}}
+                            {{questions2.askedtime.toString()}}
                         </p>
                     </div>
                 </div>
@@ -77,6 +77,12 @@
 
                 <p><br>
                     {{answers2.answer}}
+                </p>
+                <p align="right">
+                    {{answers2.name}}
+                </p>
+                <p align="right">
+                    {{answers2.answeredtime.toString()}}
                 </p>
 
             </li>

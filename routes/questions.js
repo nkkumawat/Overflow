@@ -19,15 +19,8 @@ var staterData = {
     questions:[]
 };
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-    // if(!req.session.user) {
-    //     res.render('login' , staterData);
-    // } else {
-    //     staterData.username = req.session.user[0].name;
-    //     res.render('index', staterData);
-    // }
-    sql = "SELECT * FROM questions , login where questions.askedby = login.id order by questions.askedtime desc ";
+    sql = "SELECT * FROM questions , login where askedby = id order by askedtime desc ";
     con.query(sql, function (err, result, fields) {
         staterData.questions = result;
         console.log(result[0].askedtime);

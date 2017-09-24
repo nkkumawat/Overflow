@@ -23,8 +23,8 @@ var staterData = {
 router.post('/', function(req, res, next) {
     const qid = sanitizeHtml(req.body.questionid);
     const answer = sanitizeHtml(req.body.answer);
-    // const uid = sanitizeHtml(req.session.user[0].id); //change it back
-    const  uid = 25;
+    const uid = sanitizeHtml(req.session.user[0].id); //change it back
+    // const  uid = 25;
     console.log(qid + " \n" + answer);
 
     var sql = "INSERT INTO answer ( qid, uid, answer , answeredtime) VALUES ( '"+qid+"', '"+uid+"', '"+answer+"' , CURRENT_TIMESTAMP);";

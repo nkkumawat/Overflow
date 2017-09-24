@@ -14,33 +14,31 @@ var con = mysql.createConnection({
 });
 var staterData = {
     title: 'Express',
-    company : " TECH OVERFLOW ",
+    company : "TECH OVERFLOW",
     username: ""
 };
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
     if(!req.session.user) {
-        res.render('signup' , staterData);
+        res.render('login' , staterData);
     } else {
         staterData.username = req.session.user[0].name;
         res.render('index', staterData);
     }
 });
 router.post('/', function(req, res, next) {
+    const fname = sanitizeHtml(req.body.fname);
+    const lname = sanitizeHtml(req.body.lname);
     const email = sanitizeHtml(req.body.email);
     const password = sanitizeHtml(req.body.password);
-    var sql = " select * from  login where email = '"+email+"' and password ='"+password+"'";
-    console.log(sql);
+    var sql = "INSERT INTO login(name, email, password) " +
+        "values('"+fname+" "+lname+"','"+email+"','"+password+"')";
+    con.query(sql, function (err, result, fields) {});
+    sql = "SELECT * FROM login where email = '"+email+"'";
     con.query(sql, function (err, result, fields) {
-        console.log(JSON.stringify(result));
-        if(result !== null) {
-            req.session.user = result;
-            res.redirect('/');
-        }else {
-            console.log(result);
-            res.render('login' ,{'error' : "User not found"} );
-        }
+        req.session.user = result;
+        res.redirect('/');
     });
 });
 

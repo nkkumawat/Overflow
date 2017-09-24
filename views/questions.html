@@ -29,9 +29,16 @@
     <div class="container">
         {% for questions1 in questions|groupBy('extra') %}
         {% for questions2 in questions1 %}
-            <ul class="collection">
+
+        <ul class="collection">
+            <div class="row">
+                <div class="col s1">
+                    {{questions2.votes}}
+                </div>
+            </div>
                 <li class="collection-item avatar">
-                    <img src="images/avator.svg" alt="" class="circle">
+                    <!--<img src="images/avator.svg" alt="" class="circle">-->
+
                     <a href="/questionbyid?id={{questions2.qid }}" class="title boldtxt">{{ questions2.title }}</a>
                     <p><br>
                         {{questions2.description}}
@@ -44,7 +51,7 @@
                                 {{questions2.name}}
                             </p>
                             <p align="right">
-                                {{questions2.askedtime}}
+                                {{questions2.askedtime.toString()}}
                             </p>
                         </div>
                     </div>

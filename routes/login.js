@@ -21,7 +21,7 @@ var staterData = {
 /* GET home page. */
 router.get('/', function(req, res, next) {
     if(!req.session.user) {
-        res.render('signup' , staterData);
+        res.render('login' , staterData);
     } else {
         staterData.username = req.session.user[0].name;
         res.render('index', staterData);

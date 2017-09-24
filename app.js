@@ -10,12 +10,13 @@ var mysql = require('mysql');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var login = require('./routes/signup');
+var signup = require('./routes/signup');
 var savequestion = require('./routes/savequestion');
 var questions = require('./routes/questions');
 var questionbyid = require('./routes/questionbyid');
 var saveanswer = require('./routes/saveanswer');
-var signup = require('./routes/login');
+var login = require('./routes/login');
+var logout = require('./routes/logout');
 
 var app = express();
 
@@ -55,6 +56,7 @@ app.use('/questions', questions);
 app.use('/questionbyid', questionbyid);
 app.use('/saveanswer', saveanswer);
 app.use('/signup', signup);
+app.use('/logout', logout);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

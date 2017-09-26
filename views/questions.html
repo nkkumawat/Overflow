@@ -33,13 +33,17 @@
 
         <ul class="collection">
             <div class="row">
-                <div class="col s1 votes"><br><br>
+                <div class="col s1 votes"><br>
+                    <div class="row">
+                        <img src="images/avator.svg" name="{{questions2.qid}}" class="changesvotes increment" width="20" height="20" />
+                    </div>
                     {{questions2.votes}}
+                    <div class="row">
+                        <img src="images/avator.svg" name="{{questions2.qid}}" class="changesvotes decrement" width="20" height="20" />
+                    </div>
                 </div>
                 <div class="col s11 ">
                     <li class="collection-item avatar">
-                        <!--<img src="images/avator.svg" alt="" class="circle">-->
-
                         <a href="/questionbyid?id={{questions2.qid }}" class="title boldtxt">{{ questions2.title }}</a>
                         <p><br>
                             {{questions2.description}}
@@ -101,9 +105,11 @@
 
 
 <!--  Scripts-->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<!--<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
+<script src="js/jquery.min.js"></script>
 <script src="js/materialize.js"></script>
 <script src="js/init.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
@@ -123,14 +129,5 @@
 
 
 
-
-<!--{% for agegroup in questions|groupBy('title') %}-->
-<!--<h2>{{ loop.key }}</h2>-->
-<!--<ul>-->
-    <!--{% for person in agegroup %}-->
-    <!--<li>{{ person.title }}</li>-->
-    <!--{% endfor %}-->
-<!--</ul>-->
-<!--{% endfor %}-->
 
 

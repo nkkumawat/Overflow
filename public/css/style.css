@@ -30,3 +30,7 @@ footer {
     font-size: 30px;
     text-align: center;
 }
+.changesvotes{
+    cursor: pointer;
+    background-image: url("../images/avator.svg");
+}

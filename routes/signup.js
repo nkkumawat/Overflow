@@ -23,8 +23,9 @@ router.get('/', function(req, res, next) {
     if(!req.session.user) {
         res.render('signup' , staterData);
     } else {
-        staterData.username = req.session.user[0].name;
-        res.render('index', staterData);
+        // staterData.username = req.session.user[0].name;
+        // res.render('index', staterData);
+        res.redirect('/');
     }
 });
 router.post('/', function(req, res, next) {

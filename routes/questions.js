@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
     sql = "SELECT * FROM questions , login where askedby = id order by askedtime desc ";
     con.query(sql, function (err, result, fields) {
         staterData.questions = result;
-        staterData.username = req.session.user[0].name;
+        // staterData.username = req.session.user[0].name;
         console.log(result[0].askedtime);
         res.render('questions', staterData);
     });

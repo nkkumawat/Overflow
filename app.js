@@ -17,6 +17,8 @@ var questionbyid = require('./routes/questionbyid');
 var saveanswer = require('./routes/saveanswer');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
+var downvote = require('./routes/downvote');
+var upvote = require('./routes/upvote');
 
 var app = express();
 
@@ -57,6 +59,8 @@ app.use('/questionbyid', questionbyid);
 app.use('/saveanswer', saveanswer);
 app.use('/signup', signup);
 app.use('/logout', logout);
+app.use('/downvote', downvote);
+app.use('/upvote', upvote);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
